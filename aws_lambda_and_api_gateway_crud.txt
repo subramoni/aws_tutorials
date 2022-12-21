@@ -93,6 +93,19 @@ Repeat above steps for GET method
 
 Step 5
 
+under demoapi
+
+----Resources
+-------Actions --> Deploy API ---> a menu desplay
+					--Deployment stage (New stage)-->
+						Stage name(dev)
+						Stage description()
+					--Deployment description()
+					--Click Deploy button
+
+
+Step 6
+
 AWS lambda function code
 ------------------------
 
@@ -244,7 +257,9 @@ function buildResponse(statusCode, body) {
 }
 
 
-Step 6
+Step 7
+
+Testing with postman
 
 
 
