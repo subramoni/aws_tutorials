@@ -1,5 +1,8 @@
 Create a Rest API from Scratch with AWS API Gate way and lambda
 ---------------------------------------------------------------
+
+youtube link : https://www.youtube.com/watch?v=Xsw2rXIHlUw&t=788s
+
 Step-1
 
 -- Go to Dynamodb-->
@@ -23,11 +26,25 @@ Step-2
 ---------Permission
 -------------Execution role-->
 -----------------Create a new role from AWS policy templates-->
----------------------------Role name (demoapiuser)--create new role in IAM
+---------------------------Role name (demoapiuser)--create new role in IAM - Step 3
 ---------Click Create function button
 
-
 Step-3
+
+Click lambda function demoapiuser-->
+------there is menu
+	
+	Code - Test - Monitor - Configuration - Aliass - Versions
+					|
+					Permission-->Execution role-->Role name(demoapiuser)
+
+----------------if you click Role name, it will go to IAM menu
+	-- Roles --> Permission -->Add permissions-->Attach policies
+					-->AWSLambdaBasicExecutionRole
+					-->AmazonDynamicDBFullAccess
+					-->CloudWatchFullAccess
+					
+Step-4
 
 1st page
 -- Go to API Gateway-->
@@ -44,6 +61,9 @@ Step-3
 --------Endpoint Type (Regional)
 ----Click Create API
 3rd page
+
+under demoapi
+
 ----Resources
 -------Actions --> Create Resource-->
 ----------------------New Child Resource-->
@@ -51,7 +71,15 @@ Step-3
 ---------------------------Resource Name (user)
 ---------------------------Resource Path (/user)
 ---------------------------Enable API Gateway CORS -- Click to Ok
----------------------------Create Resouces
+---------------------------Click Create Resouces button
 
-	
+under Resource (/user)
+
+----Resources
+-------Actions --> Create Method-->
+			--Integration type (Lambda function)
+			--Use Lambda Proxy integration -- Click to OK
+			--Lambda Region (ap-south-1)
+			--Lambda Function (demoapiuser)
+			--Use Default Timeout -- Click to OK
 
